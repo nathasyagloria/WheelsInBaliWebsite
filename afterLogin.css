@@ -438,20 +438,21 @@ body {
       color: #5f7c8a;
     }
     
-    .social-icons a {
-      margin-right: 15px;
-      display: inline-block;
-      transition: transform 0.3s ease;
+    .social-icons {
+      display: flex;
+      gap: 15px; 
+      justify-content: flex-start; 
+      align-items: center;
     }
     
     .social-icons img {
-      width: 24px;
-      height: 24px;
-      filter: brightness(0) invert(1);
+      height: 30px; 
+      width: auto; 
+      transition: transform 0.2s ease;
     }
     
-    .social-icons a:hover {
-      transform: scale(1.1);
+    .social-icons img:hover {
+      transform: translateY(-3px); 
     }
     
     .footer-bottom {
