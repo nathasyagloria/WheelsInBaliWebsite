@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | WheelsInBali</title>
+  <link rel="stylesheet" href="halaman.css" />
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <div class="logo">WheelsInBali</div>
+      <ul class="nav-links">
+        <li class="li-navbar"><a href="halaman.html">Home</a></li>
+        <li class="li-navbar"><a href="vehicles.html">Vehicles</a></li>
+        <li class="li-navbar"><a href="about.html">About</a></li>
+        <li class="li-navbar"><a href="choose.html">Rent</a></li>
+        <li class="li-navbar"><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-btn">EN</button>
+        <a href="login.html" class="login-btn" id="login-link">Login</a>
+        <a href="register.html" class="register-btn">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-main-content">
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <h1>Get in Touch with Us</h1>
+        <p>We're here to help and answer any question you might have. We look forward to hearing from you.</p>
+      </div>
+    </section>
+
+    <section class="contact-info-section">
+      <div class="info-card">
+        <h3>Our Office</h3>
+        <p>Jl. Raya Ubud No.13</p>
+        <p>Ubud, Kecamatan Ubud,</p>
+        <p>Kabupaten Gianyar, Bali 80571</p>
+      </div>
+      <div class="info-card">
+        <h3>Call Us</h3>
+        <p>Phone: +62 812-1111-8456</p>
+        <p>WhatsApp Hotline: +62 853-1111-1010</p>
+      </div>
+      <div class="info-card">
+        <h3>Email Us</h3>
+        <p>info@wheelsinbali.com</p>
+        <p>support@wheelsinbali.com</p>
+      </div>
+    </section>
+
+    <section class="contact-form-section">
+      <div class="contact-form-container">
+        <h2>Send Us a Message</h2>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Your Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" placeholder="Subject of your message" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          </div>
+          <button type="submit" class="submit-message-btn">Send Message</button>
+        </form>
+        <div id="contact-status-message" class="contact-status-message"></div>
+      </div>
+    </section>
+
+    <section class="contact-map-section">
+      <h2>Find Us on the Map</h2>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.74837452669!2d115.25875937517176!3d-8.506450691768404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d9178465b05%3A0x6291a27e7706d860!2sJl.%20Raya%20Ubud%20No.13%2C%20Ubud%2C%20Kecamatan%20Ubud%2C%20Kabupaten%20Gianyar%2C%20Bali%2080571!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>Customer Care</h3>
+        <p>Jl. Raya Ubud No.13</p>
+        <p>Ubud, Kecamatan Ubud,</p>
+        <p>Kabupaten Gianyar, Bali 80571</p>
+        <p>Phone: 0812-1111-8456</p>
+      </div>
+  
+      <div class="footer-middle">
+        <h3>Consumer Services</h3>
+        <p>Directorate General of Consumer Protection<br>and Trade Compliance, Ministry of Trade, RI</p>
+        <p>WhatsApp Hotline: 0853-1111-1010</p>
+      </div>
+  
+      <div class="footer-right">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="http://instagram.com/your_instagram_handle" target="_blank"><img src="image/logoIG.png" alt="Instagram"></a>
+          <a href="http://facebook.com/your_facebook_page" target="_blank"><img src="image/logoFB.png" alt="Facebook"></a>
+          <a href="http://twitter.com/your_twitter_handle" target="_blank"><img src="image/logoX.png" alt="X"></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 WheelsInBali. All rights reserved</p>
+      <div class="footer-links">
+        <a href="#">Terms & Conditions</a>
+        <span>●</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="contact.js"></script>
+  <script src="navbar.js"></script>
+
+</body>
+</html>

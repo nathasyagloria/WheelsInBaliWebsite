@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Out Your Vehicle | WheelsInBali</title>
+    <link rel="stylesheet" href="halaman.css"> <link rel="stylesheet" href="rentout.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="main-navbar">
+        <div class="navbar-container">
+            <div class="logo">WheelsInBali</div>
+            <ul class="nav-links">
+                <li class="li-navbar"><a href="halaman.html">Home</a></li>
+                <li class="li-navbar"><a href="vehicles.html">Vehicles</a></li>
+                <li class="li-navbar"><a href="about.html">About</a></li>
+                <li class="li-navbar"><a href="choose.html">Rent</a></li>
+                <li class="li-navbar"><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-btn">EN</button>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="register-btn">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="rent-out-section">
+        <div class="rent-out-container">
+            <h1>List Your Vehicle for Rent</h1>
+            <p class="description-text">Provide details about your vehicle and its availability.</p>
+
+            <div class="progress-bar">
+                <div class="progress-step active" id="step1-indicator">1</div>
+                <div class="progress-step" id="step2-indicator">2</div>
+                <div class="progress-step" id="step3-indicator">3</div>
+            </div>
+
+            <form id="rent-out-form" class="rent-out-form">
+                <div class="form-step active" id="step1">
+                    <h2>Step 1: Vehicle Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="vehicle-type">Vehicle Type</label>
+                        <select id="vehicle-type" name="vehicle-type" required>
+                            <option value="">Select Type</option>
+                            <option value="car">Car</option>
+                            <option value="motorcycle">Motorcycle</option>
+                            <option value="e-bike">E-Bike</option>
+                            <option value="bicycle">Bicycle</option>
+                        </select>
+                        <div class="error-message" id="vehicle-type-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vehicle-make-model">Make & Model</label>
+                        <input type="text" id="vehicle-make-model" name="vehicle-make-model" placeholder="e.g., Honda Vario 150" required>
+                        <div class="error-message" id="vehicle-make-model-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vehicle-year">Year</label>
+                        <input type="number" id="vehicle-year" name="vehicle-year" placeholder="e.g., 2020" min="1900" max="2099" required>
+                        <div class="error-message" id="vehicle-year-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="license-plate">License Plate Number</label>
+                        <input type="text" id="license-plate" name="license-plate" placeholder="e.g., DK 1234 ABC" required>
+                        <div class="error-message" id="license-plate-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vehicle-description">Vehicle Description</label>
+                        <textarea id="vehicle-description" name="vehicle-description" rows="4" placeholder="Briefly describe your vehicle's condition, features, etc." required></textarea>
+                        <div class="error-message" id="vehicle-description-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="daily-rate">Daily Rental Rate (IDR)</label>
+                        <input type="number" id="daily-rate" name="daily-rate" placeholder="e.g., 150000" min="0" required>
+                        <div class="error-message" id="daily-rate-error"></div>
+                    </div>
+
+                    <button type="button" class="next-step-btn">Next</button>
+                </div>
+
+                <div class="form-step" id="step2">
+                    <h2>Step 2: Photos & Availability</h2>
+
+                    <div class="form-group">
+                        <label for="vehicle-photos">Vehicle Photos (Max 5)</label>
+                        <input type="file" id="vehicle-photos" name="vehicle-photos[]" accept="image/*" multiple required>
+                        <p class="help-text">Upload clear photos of your vehicle (front, back, sides, interior).</p>
+                        <div id="photo-preview" class="photo-preview-container"></div>
+                        <div class="error-message" id="vehicle-photos-error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="available-start-date">Available From</label>
+                        <input type="date" id="available-start-date" name="available-start-date" required>
+                        <div class="error-message" id="available-start-date-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="available-end-date">Available Until</label>
+                        <input type="date" id="available-end-date" name="available-end-date" required>
+                        <div class="error-message" id="available-end-date-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup-delivery-preference">Pickup/Delivery Preference</label>
+                        <select id="pickup-delivery-preference" name="pickup-delivery-preference" required>
+                            <option value="">Select Preference</option>
+                            <option value="owner-location">Pick up at my location</option>
+                            <option value="delivery-only">I can deliver to renter's location</option>
+                            <option value="both">Both (Pick up or Delivery)</option>
+                        </select>
+                        <div class="error-message" id="pickup-delivery-preference-error"></div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="prev-step-btn">Previous</button>
+                        <button type="button" class="next-step-btn">Next</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step3">
+                    <h2 id="step3-title">Step 3: Review & Submit</h2>
+
+                    <div id="owner-info-section" class="owner-info-section">
+                        <h3>Your Contact Information</h3>
+                        <div class="form-group">
+                            <label for="owner-name">Full Name</label>
+                            <input type="text" id="owner-name" name="owner-name" placeholder="Your full name" required>
+                            <div class="error-message" id="owner-name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="owner-email">Email</label>
+                            <input type="email" id="owner-email" name="owner-email" placeholder="Your email address" required>
+                            <div class="error-message" id="owner-email-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="owner-phone">Phone Number</label>
+                            <input type="tel" id="owner-phone" name="owner-phone" placeholder="e.g., +628123456789" required>
+                            <div class="error-message" id="owner-phone-error"></div>
+                        </div>
+                    </div>
+
+                    <div id="summary-section" class="summary-section">
+                        <h3>Vehicle Details Summary</h3>
+                        <p><strong>Vehicle Type:</strong> <span id="summary-vehicle-type"></span></p>
+                        <p><strong>Make & Model:</strong> <span id="summary-make-model"></span></p>
+                        <p><strong>Year:</strong> <span id="summary-year"></span></p>
+                        <p><strong>License Plate:</strong> <span id="summary-license-plate"></span></p>
+                        <p><strong>Description:</strong> <span id="summary-description"></span></p>
+                        <p><strong>Daily Rate:</strong> IDR <span id="summary-daily-rate"></span></p>
+                        <p><strong>Availability:</strong> <span id="summary-availability"></span></p>
+                        <p><strong>Pickup/Delivery:</strong> <span id="summary-pickup-delivery"></span></p>
+                        <div id="summary-photos" class="summary-photos-container"></div>
+                    </div>
+                    
+                    <div class="server-error-message" id="form-server-error"></div>
+
+                    <div class="form-actions">
+                        <button type="button" class="prev-step-btn">Previous</button>
+                        <button type="submit">Submit Listing</button>
+                    </div>
+                </div>
+
+                <div class="success-message" id="success-message" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Vehicle Listed Successfully!</h2>
+                    <p>Your vehicle has been successfully listed for rent. We will review your submission and notify you once it's live.</p>
+                    <button type="button" class="back-to-home-btn" onclick="window.location.href='halaman.html'">Back to Home</button>
+                    <button type="button" class="view-listings-btn" onclick="window.location.href='my-listings.html'">View My Listings</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>Customer Care</h3>
+            <p>Graha Ganesha Building, 1st Floor Suite 120 & 130</p>
+            <p>Jl. Hayam Wuruk No. 28, Kebon Klapa,<br>Gambir, Central Jakarta, DKI Jakarta</p>
+            <p>Phone: 0812-1111-8456</p>
+          </div>
+      
+          <div class="footer-middle">
+            <h3>Consumer Services</h3>
+            <p>Directorate General of Consumer Protection<br>and Trade Compliance, Ministry of Trade, RI</p>
+            <p>WhatsApp Hotline: 0853-1111-1010</p>
+          </div>
+      
+          <div class="footer-right">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="http://instagram.com/your_instagram_handle" target="_blank"><img src="image/logoIG.png" alt="Instagram"></a>
+              <a href="http://facebook.com/your_facebook_page" target="_blank"><img src="image/logoFB.png" alt="Facebook"></a>
+              <a href="http://twitter.com/your_twitter_handle" target="_blank"><img src="image/logoX.png" alt="X"></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>© 2025 MR.COFFEE. All rights reserved</p>
+          <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <span>●</span>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+    
+
+    <script src="navbar.js"></script>
+    <script src="rentout.js"></script>
+</body>
+</html>

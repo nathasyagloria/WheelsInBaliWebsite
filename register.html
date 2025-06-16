@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | WheelsInBali</title>
+  <link rel="stylesheet" href="halaman.css" /> <link rel="stylesheet" href="register.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <div class="logo">WheelsInBali</div>
+      <ul class="nav-links">
+        <li class="li-navbar"><a href="halaman.html">Home</a></li>
+        <li class="li-navbar"><a href="vehicles.html">Vehicles</a></li>
+        <li class="li-navbar"><a href="about.html">About</a></li>
+        <li class="li-navbar"><a href="choose.html">Rent</a></li>
+        <li class="li-navbar"><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-btn">EN</button>
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="register.html" class="register-btn active-nav-btn">Register</a> </div>
+    </div>
+  </nav>
+
+  <section id="register-section">
+    <div class="register-container">
+      <h1>Register</h1>
+      <p class="already-have-account">
+        Already have an account? 
+        <a href="login.html" class="login-link">Login</a> </p>
+
+      <form id="register-form" class="register-form">
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+            <div class="error-message" id="fullname-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
+            <div class="error-message" id="email-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required />
+            <div class="error-message" id="password-error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required />
+            <div class="error-message" id="confirm-password-error"></div>
+        </div>
+
+        <button type="submit">Register</button>
+        <div class="server-error-message" id="server-error"></div>
+      </form>
+    </div>
+  </section>
+
+  <script src="register.js"></script> </body>
+  <script src="navbar.js"></script>
+</html>

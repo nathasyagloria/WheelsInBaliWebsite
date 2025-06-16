@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Wheels in Bali</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="review.css">
+</head>
+<body>
+
+    <nav class="main-navbar">
+        <div class="navbar-container">
+          <div class="logo">WheelsInBali</div>
+          <ul class="nav-links">
+            <li class="li-navbar"><a href="halaman.html">Home</a></li>
+            <li class="li-navbar"><a href="vehicles.html">Vehicles</a></li>
+            <li class="li-navbar"><a href="about.html">About</a></li>
+            <li class="li-navbar"><a href="choose.html">Rent</a></li>
+            <li class="li-navbar"><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+            <button class="lang-btn">EN</button>
+            <a href="login.html" class="login-btn" id="login-link">Login</a>
+            <a href="register.html" class="register-btn">Register</a>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        <div class="review-container">
+            <h1>Leave Your Review</h1>
+
+            <form action="#" method="POST"> <div class="review-section">
+                    <h3>Website Review for Wheels in Bali</h3>
+                    <p>How was your experience using our website?</p>
+                    <div class="rating">
+                        <input type="radio" id="website-star5" name="website_rating" value="5"><label for="website-star5" title="5 stars">&#9733;</label>
+                        <input type="radio" id="website-star4" name="website_rating" value="4"><label for="website-star4" title="4 stars">&#9733;</label>
+                        <input type="radio" id="website-star3" name="website_rating" value="3"><label for="website-star3" title="3 stars">&#9733;</label>
+                        <input type="radio" id="website-star2" name="website_rating" value="2"><label for="website-star2" title="2 stars">&#9733;</label>
+                        <input type="radio" id="website-star1" name="website_rating" value="1"><label for="website-star1" title="1 star">&#9733;</label>
+                    </div>
+                    <label for="website_feedback">Short Review (Optional):</label>
+                    <textarea id="website_feedback" name="website_feedback" placeholder="Share your comments or suggestions here..."></textarea>
+                </div>
+
+                <div class="review-section">
+                    <h3>Vehicle Review</h3>
+                    <p>How was your experience renting a vehicle from Wheels in Bali?</p>
+                    <label for="vehicle_name">Vehicle Name / Type Rented:</label>
+                    <input type="text" id="vehicle_name" name="vehicle_name" placeholder="Example: Honda Vario, Avanza Car, Electric Bike">
+
+                    <div class="rating">
+                        <input type="radio" id="vehicle-star5" name="vehicle_rating" value="5"><label for="vehicle-star5" title="5 stars">&#9733;</label>
+                        <input type="radio" id="vehicle-star4" name="vehicle_rating" value="4"><label for="vehicle-star4" title="4 stars">&#9733;</label>
+                        <input type="radio" id="vehicle-star3" name="vehicle_rating" value="3"><label for="vehicle-star3" title="3 stars">&#9733;</label>
+                        <input type="radio" id="vehicle-star2" name="vehicle_rating" value="2"><label for="vehicle-star2" title="2 stars">&#9733;</label>
+                        <input type="radio" id="vehicle-star1" name="vehicle_rating" value="1"><label for="vehicle-star1" title="1 star">&#9733;</label>
+                    </div>
+                    <label for="vehicle_feedback">Short Review (Optional):</label>
+                    <textarea id="vehicle_feedback" name="vehicle_feedback" placeholder="Tell us about your experience with this vehicle..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+            <p class="form-note">
+                *Note: This form is for display purposes only. The data you enter will not be saved as this website does not have a backend system.
+            </p>
+
+            <div class="existing-reviews-section">
+                <h2>Reviews from Other Customers</h2>
+
+                <div class="review-item">
+                    <div class="reviewer-info">
+                        <h4>Budi Santoso</h4>
+                        <div class="review-stars">
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"Renting a car at Wheels in Bali was very easy and fast. The car was clean and well-maintained, perfect for exploring Bali. Highly recommended!"</p>
+                    <span class="review-date">June 10, 2025</span>
+                </div>
+
+                <div class="review-item">
+                    <div class="reviewer-info">
+                        <h4>Dewi Lestari</h4>
+                        <div class="review-stars">
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-empty">&#9733;</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"The website is easy to navigate. The motorbike I rented was in good condition, just a bit dirty on the tires. Overall, a good experience."</p>
+                    <span class="review-date">June 05, 2025</span>
+                </div>
+
+                <div class="review-item">
+                    <div class="reviewer-info">
+                        <h4>Putu Gede</h4>
+                        <div class="review-stars">
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-filled">&#9733;</span>
+                            <span class="star-empty">&#9733;</span>
+                            <span class="star-empty">&#9733;</span>
+                        </div>
+                    </div>
+                    <p class="review-text">"The service was pretty good, but the response was a bit slow. The vehicle matched the description. Hope it can be faster next time."</p>
+                    <span class="review-date">May 28, 2025</span>
+                </div>
+
+                </div> </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>Customer Care</h3>
+            <p>Jl. Raya Ubud No.13</p>
+            <p>Ubud, Kecamatan Ubud,</p>
+            <p>Kabupaten Gianyar, Bali 80571</p>
+            <p>Phone: 0812-1111-8456</p>
+          </div>
+      
+          <div class="footer-middle">
+            <h3>Consumer Services</h3>
+            <p>Directorate General of Consumer Protection<br>and Trade Compliance, Ministry of Trade, RI</p>
+            <p>WhatsApp Hotline: 0853-1111-1010</p>
+          </div>
+      
+          <div class="footer-right">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="http://instagram.com/your_instagram_handle" target="_blank"><img src="image/logoIG.png" alt="Instagram"></a>
+              <a href="http://facebook.com/your_facebook_page" target="_blank"><img src="image/logoFB.png" alt="Facebook"></a>
+              <a href="http://twitter.com/your_twitter_handle" target="_blank"><img src="image/logoX.png" alt="X"></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>© 2025 WheelsInBali. All rights reserved</p>
+          <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <span>●</span>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+
+    <script src="navbar.js"></script>
+    </body>
+</html>

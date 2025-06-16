@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent a Vehicle | WheelsInBali</title>
+  <link rel="stylesheet" href="halaman.css" />
+  <link rel="stylesheet" href="rent.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <div class="logo">WheelsInBali</div>
+      <ul class="nav-links">
+        <li class="li-navbar"><a href="halaman.html">Home</a></li>
+        <li class="li-navbar"><a href="vehicles.html">Vehicles</a></li>
+        <li class="li-navbar"><a href="about.html">About</a></li>
+        <li class="li-navbar"><a href="choose.html">Rent</a></li>
+        <li class="li-navbar"><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-btn">EN</button>
+        <a href="login.html" class="login-btn" id="login-link">Login</a>
+        <a href="register.html" class="register-btn">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="rent-main-content">
+    <div class="rent-container">
+      <div class="rent-progress-bar">
+        <div class="progress-step active" id="step-vehicle">
+          <span class="step-icon">1</span>
+          <span class="step-text">Vehicle & Dates</span>
+        </div>
+        <div class="progress-step" id="step-profile">
+          <span class="step-icon">2</span>
+          <span class="step-text">User Info</span>
+        </div>
+        <div class="progress-step" id="step-payment">
+          <span class="step-icon">3</span>
+          <span class="step-text">Payment</span>
+        </div>
+      </div>
+
+      <div class="rent-form-section">
+        <div class="rent-form-left">
+          <form id="rent-form" class="rent-form" novalidate>
+            <div class="form-step active" id="vehicle-step">
+              <h2>Vehicle Selection & Rental Dates</h2>
+              <div class="form-group">
+                <label for="vehicle-type">Vehicle Type</label>
+                <select id="vehicle-type" name="vehicleType" required>
+                  <option value="">Select Vehicle Type</option>
+                  <option value="car">Car</option>
+                  <option value="motorcycle">Motorcycle</option>
+                  <option value="e-bike">E-Bike</option>
+                  <option value="bike">Bike</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="vehicle-model">Vehicle Model</label>
+                <select id="vehicle-model" name="vehicleModel" required disabled>
+                  <option value="">Select Vehicle Model</option>
+                  </select>
+              </div>
+              <div class="vehicle-preview-container" id="vehicle-preview-container">
+                  </div>
+              <div class="form-group">
+                <label for="pickup-address">Pickup Address</label>
+                <input type="text" id="pickup-address" name="pickupAddress" placeholder="Enter pickup address" required>
+              </div>
+              <div class="form-group date-group">
+                <div>
+                    <label for="pickup-date">Pickup Date</label>
+                    <input type="date" id="pickup-date" name="pickupDate" required>
+                </div>
+                <div>
+                    <label for="return-date">Return Date</label>
+                    <input type="date" id="return-date" name="returnDate" required>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn next-btn" data-step="1">Next</button>
+              </div>
+            </div>
+
+            <div class="form-step" id="profile-step">
+              <h2>Customer Information</h2>
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="fullName" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phoneNumber" placeholder="e.g., +6281234567890" required>
+              </div>
+              <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn prev-btn" data-step="2">Previous</button>
+                <button type="button" class="btn next-btn" data-step="2">Next</button>
+              </div>
+            </div>
+
+            <div class="form-step" id="payment-step">
+              <h2>Payment Method</h2>
+              <div class="payment-options">
+                <div class="payment-option">
+                  <input type="radio" id="credit-card" name="paymentMethod" value="credit-card" required>
+                  <label for="credit-card">Credit Card</label>
+                  <div class="card-logos">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/1280px-Visa_Inc._logo.svg.png" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png" alt="MasterCard">
+                  </div>
+                </div>
+                <div class="payment-option">
+                  <input type="radio" id="qris" name="paymentMethod" value="qris" required>
+                  <label for="qris">QRIS</label>
+                  <div class="bank-logo">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/QRIS_logo.svg" alt="QRIS">
+                  </div>
+              </div>
+                <div class="payment-option">
+                    <input type="radio" id="gopay" name="paymentMethod" value="gopay" required>
+                    <label for="gopay">GoPay</label>
+                    <div class="bank-logo">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Gopay_logo.svg/1280px-Gopay_logo.svg.png" alt="GoPay">
+                    </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn prev-btn" data-step="3">Previous</button>
+                <button type="submit" class="btn submit-btn">Submit Order</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="rent-summary-right">
+          <div class="summary-box">
+            <h2>Your Order Summary</h2>
+            <div class="summary-vehicle-image-container">
+                <img id="summary-vehicle-image" src="" alt="Selected Vehicle" class="hidden">
+            </div>
+            <div class="summary-item">
+              <span>Vehicle Type</span>
+              <span id="summary-vehicle-type">N/A</span>
+            </div>
+            <div class="summary-item">
+              <span>Vehicle Model</span>
+              <span id="summary-vehicle-model">N/A</span>
+            </div>
+            <div class="summary-item">
+              <span>Pickup Address</span>
+              <span id="summary-pickup-address">N/A</span>
+            </div>
+            <div class="summary-item">
+              <span>Rental Period</span>
+              <span id="summary-rental-period">N/A</span>
+            </div>
+            <div class="summary-item">
+                <span>Rental Days</span>
+                <span id="summary-rental-days">0 Day(s)</span>
+              </div>
+            <div class="summary-price">
+              <div class="summary-item">
+                <span>Daily Rate</span>
+                <span id="summary-daily-rate">IDR 0</span>
+              </div>
+              <div class="summary-item">
+                <span>Subtotal</span>
+                <span id="summary-subtotal">IDR 0</span>
+              </div>
+              <div class="summary-item total-amount">
+                <span>TOTAL TO PAY</span>
+                <span id="summary-total-to-pay">IDR 0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>Customer Care</h3>
+        <p>Graha Ganesha Building, 1st Floor Suite 120 & 130</p>
+        <p>Jl. Hayam Wuruk No. 28, Kebon Klapa,<br>Gambir, Central Jakarta, DKI Jakarta</p>
+        <p>Phone: 0812-1111-8456</p>
+      </div>
+  
+      <div class="footer-middle">
+        <h3>Consumer Services</h3>
+        <p>Directorate General of Consumer Protection<br>and Trade Compliance, Ministry of Trade, RI</p>
+        <p>WhatsApp Hotline: 0853-1111-1010</p>
+      </div>
+  
+      <div class="footer-right">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="http://instagram.com/your_instagram_handle" target="_blank"><img src="image/logoIG.png" alt="Instagram"></a>
+          <a href="http://facebook.com/your_facebook_page" target="_blank"><img src="image/logoFB.png" alt="Facebook"></a>
+          <a href="http://twitter.com/your_twitter_handle" target="_blank"><img src="image/logoX.png" alt="X"></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 MR.COFFEE. All rights reserved</p>
+      <div class="footer-links">
+        <a href="#">Terms & Conditions</a>
+        <span>●</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="rent.js"></script>
+  <script src="navbar.js"></script>
+
+</body>
+</html>

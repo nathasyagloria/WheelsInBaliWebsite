@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Profile | WheelsInBali</title>
+  <link rel="stylesheet" href="halaman.css" />
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <nav class="main-navbar">
+    <div class="navbar-container">
+      <div class="logo">WheelsInBali</div>
+      <ul class="nav-links">
+        <li class="li-navbar"><a href="halaman.html">Home</a></li>
+        <li class="li-navbar"><a href="vehicles.html">Vehicles</a></li>
+        <li class="li-navbar"><a href="about.html">About</a></li>
+        <li class="li-navbar"><a href="choose.html">Rent</a></li>
+        <li class="li-navbar"><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-btn">EN</button>
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="register.html" class="register-btn">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="profile-main-content">
+    <section class="profile-header-section">
+      <div class="profile-header-content">
+        <h1 id="welcome-message">Hello, User!</h1>
+        <p>Manage your profile and review requirements.</p>
+      </div>
+    </section>
+
+    <section class="user-details-section">
+      <div class="details-card">
+        <h2>Your Personal Information</h2>
+        <div class="profile-display-mode" id="profileDisplayMode">
+          <table>
+            <tr>
+              <td><strong>Full Name:</strong></td>
+              <td id="display-fullname"></td>
+            </tr>
+            <tr>
+              <td><strong>Email:</strong></td>
+              <td id="display-email"></td>
+            </tr>
+            <tr>
+              <td><strong>Phone Number:</strong></td>
+              <td id="display-phone"></td>
+            </tr>
+            <tr>
+              <td><strong>Location:</strong></td>
+              <td id="display-location"></td>
+            </tr>
+            <tr>
+              <td><strong>Date of Birth:</strong></td>
+              <td id="display-dob"></td>
+            </tr>
+            <tr>
+              <td><strong>Member Since:</strong></td>
+              <td id="display-member-since"></td>
+            </tr>
+          </table>
+          <button class="action-btn edit-profile-btn" id="editProfileBtn">Edit Profile</button>
+        </div>
+
+        <div class="profile-edit-mode hidden" id="profileEditMode">
+          <div class="form-group">
+            <label for="edit-fullname">Full Name:</label>
+            <input type="text" id="edit-fullname" placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" placeholder="Enter your email" disabled> </div>
+          <div class="form-group">
+            <label for="edit-phone">Phone Number:</label>
+            <input type="tel" id="edit-phone" placeholder="e.g., +62 812-3456-7890">
+          </div>
+          <div class="form-group">
+            <label for="edit-location">Location:</label>
+            <input type="text" id="edit-location" placeholder="e.g., Denpasar, Bali">
+          </div>
+          <div class="form-group">
+            <label for="edit-dob">Date of Birth:</label>
+            <input type="date" id="edit-dob">
+          </div>
+          <div class="profile-edit-actions">
+            <button class="action-btn save-profile-btn" id="saveProfileBtn">Save Changes</button>
+            <button class="action-btn cancel-edit-btn" id="cancelEditBtn">Cancel</button>
+          </div>
+        </div>
+        <button id="logout-btn-profile" class="logout-btn-profile">Logout</button>
+      </div>
+    </section>
+
+    <section class="requirements-section">
+      <h2>Rental Requirements</h2>
+      <div class="requirements-grid">
+        <div class="requirement-box">
+          <h3>For Companies</h3>
+          <ul>
+            <li>Copy of Business Permit (SIUP) and NPWP</li>
+            <li>Copy of Deed of Establishment</li>
+            <li>Copy of Company Registration Certificate (TDP)</li>
+            <li>Company Domicile Certificate</li>
+            <li>Legalization Letter from the Ministry of Law and Human Rights</li>
+            <li>Copy of Director's and Responsible Officer's ID card (KTP)</li>
+            <li>Authorization Letter if not represented by the company director</li>
+            <li>Copy of Driver's License (SIM)</li>
+            <li>On-site survey of company address</li>
+          </ul>
+        </div>
+
+        <div class="requirement-box">
+          <h3>For Individuals</h3>
+          <ul>
+            <li>Copy of House Ownership Certificate or Residential Agreement</li>
+            <li>Copy of Land and Building Tax (PBB)</li>
+            <li>Copy of Tax ID Number (NPWP)</li>
+            <li>Copy of ID card (KTP/KITAS) of renter and guarantor</li>
+            <li>Copy of Family Card (KK)</li>
+            <li>Copy of Passport</li>
+            <li>Copy of Driver's License (SIM)</li>
+            <li>Copy of Work ID</li>
+            <li>Business Card</li>
+            <li>Guarantor (if necessary)</li>
+            <li>Proof of safe and suitable parking space</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>Customer Care</h3>
+        <p>Jl. Raya Ubud No.13</p>
+        <p>Ubud, Kecamatan Ubud,<br>Kabupaten Gianyar, Bali 80571</p>
+        <p>Phone: 0812-1111-8456</p>
+      </div>
+      <div class="footer-middle">
+        <h3>Consumer Services</h3>
+        <p>Directorate General of Consumer Protection<br>and Trade Compliance, Ministry of Trade, RI</p>
+        <p>WhatsApp Hotline: 0853-1111-1010</p>
+      </div>
+      <div class="footer-right">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="http://instagram.com/your_instagram_handle" target="_blank"><img src="image/logoIG.png" alt="Instagram"></a>
+          <a href="http://facebook.com/your_facebook_page" target="_blank"><img src="image/logoFB.png" alt="Facebook"></a>
+          <a href="http://twitter.com/your_twitter_handle" target="_blank"><img src="image/logoX.png" alt="X"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MR.COFFEE. All rights reserved</p>
+      <div class="footer-links">
+        <a href="#">Terms & Conditions</a>
+        <span>●</span>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="navbar.js"></script> <script src="profile.js"></script>
+
+</body>
+</html>

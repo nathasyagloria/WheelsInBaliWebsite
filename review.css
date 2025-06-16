@@ -1,0 +1,827 @@
+* {
+    box-sizing: border-box; 
+    margin: 0;            
+    padding: 0;           
+  }
+     
+  
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; 
+    background: #f7f8fc; 
+    color: #333;      
+  }
+  
+  
+  a {
+    text-decoration: none; 
+    color: inherit;        
+  }
+    
+ 
+  .main-navbar {
+    position: sticky;      
+    top: 0;
+    z-index: 10;         
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+    padding: 20px 40px;    
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .navbar-container {
+    margin: 0 auto;       
+    padding: 0 20px;     
+    max-width: 1200px;   
+    width: 100%;
+    display: flex;
+    align-items: center;  
+    justify-content: space-between; 
+  }
+  
+
+  .main-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-container {
+    margin: 0 auto; 
+    padding: 0 20px; 
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #5f7c8a;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  .nav-links li a {
+    padding: 8px 12px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .nav-links li a:hover {
+    background-color: #f0f0f0;
+    color: #5f7c8a;
+  }
+  .nav-actions {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .lang-btn, .login-btn, .register-btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  .lang-btn {
+    border: 1px solid #ccc;
+    background: transparent;
+  }
+  .lang-btn:hover, .login-btn:hover {
+    background-color: #ececec;
+    color: #5f7c8a;
+  }
+  .register-btn {
+    background-color: #5f7c8a;
+    color: white;
+  }
+  .register-btn:hover {
+    background-color: #4c6773;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+ 
+  .hero {
+    background: linear-gradient(90deg, #5f7c8a, #7a9eb1); 
+    color: white;            
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;           
+    flex-wrap: wrap;      
+  }
+  
+  .btn.rent-btn {
+    background-color: white; 
+    color: #5f7c8a;         
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid white; 
+    transition: 0.3s ease; 
+  }
+  
+  .btn.rent-btn:hover {
+    background-color: transparent; 
+    color: white;            
+    border-color: white;     
+  }
+    
+  
+  .open-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    color: #5f7c8a;
+    z-index: 3;
+    cursor: pointer;
+  }
+    
+
+  .section {
+    padding: 60px 20px;
+    background-color: #f8f9fb; 
+  }
+  
+  .section h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 30px;           
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    width: 270px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s; 
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08); 
+  }
+  
+  .card img {
+    width: 80%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .btn-outline {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 10px;
+    border: 2px solid #5f7c8a; 
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .btn-outline:hover {
+    background-color: #5f7c8a; 
+    color: white;             
+  }
+    
+  
+  .cta-section {
+    background: #5f7c8a; 
+    color: white;       
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  
+  .about-section {
+    padding: 60px 5%;     
+    background-color: #ffffff; 
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;      
+    align-items: center;   
+    gap: 40px;             
+    max-width: 1000px;
+    margin: auto;        
+  }
+  
+  .about-text {
+    flex: 1;             
+    min-width: 300px;    
+  }
+  
+  .about-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #1e3932;
+  }
+  
+  .about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .about-image {
+    flex: 1;              
+    min-width: 200px;     
+  }
+  
+  .about-image img {
+    width: 350px;         
+    margin-left: 150px;   
+    border-radius: 20px;  
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); 
+  }
+  
+  
+  #rental-requirements {
+    padding: 60px 20px;
+    background-color: #f7f8fc;
+    color: #5f7c8a;
+  }
+    
+  #rental-requirements h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif; 
+  }
+    
+  .requirements-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+    
+  .requirement-box {
+    flex: 1 1 45%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+    
+  .requirement-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1e3932;
+  }
+    
+  .requirement-box ul {
+    padding-left: 20px;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+    
+  .requirement-box ul li::marker { 
+    color: #1e3932;
+  }
+    
+  .requirement-notes {
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+    
+  .requirement-notes h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1e3932;
+  }
+    
+  .requirement-notes ul {
+    padding-left: 20px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }  
+    
+  .footer-section {
+    background-color: #ececec;
+    color: #fff;
+    padding: 60px 30px 30px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-content > div {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #5f7c8a;
+  }
+  
+  .footer-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #5f7c8a;
+  }
+  
+  .social-icons a {
+    margin-right: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons img {
+    width: 20px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #4c6773;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #5f7c8a;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: #5f7c8a;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #5f7c8a;
+  }
+  
+  
+  main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+  }
+  
+  .review-container {
+      max-width: 800px;
+      width: 100%;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      color: #333;
+  }
+  
+  .review-container h1, .review-container h2, .review-container h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      text-align: center;
+      margin-bottom: 25px;
+  }
+  
+  .review-section {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+  }
+  .review-section:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+  }
+  
+  .review-section label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+  }
+  
+  .rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      margin: 15px 0 25px 0;
+  }
+  .rating input[type="radio"] {
+      display: none;
+  }
+  .rating label {
+      font-size: 2.5em;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s ease;
+  }
+  .rating label:hover,
+  .rating label:hover ~ label,
+  .rating input[type="radio"]:checked ~ label {
+      color: #FFD700; 
+  }
+  
+  textarea {
+      width: calc(100% - 22px);
+      min-height: 100px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: vertical;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1em;
+      color: #333;
+      box-sizing: border-box;
+  }
+  input[type="text"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1em;
+      color: #333;
+      box-sizing: border-box;
+  }
+  
+  .submit-btn {
+      display: block;
+      width: auto;
+      margin: 30px auto 0 auto;
+      background-color: #4c6773;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.2em;
+      font-family: 'Poppins', sans-serif;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .submit-btn:hover {
+      background-color: #5f7c8a;
+      transform: translateY(-2px);
+  }
+  
+  .form-note {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+  }
+  
+  .existing-reviews-section {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid #eee;
+  }
+  
+  .existing-reviews-section h2 {
+      margin-bottom: 30px;
+  }
+  
+  .review-item {
+      background-color: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .reviewer-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+  }
+  
+  .reviewer-info h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin: 0;
+      margin-right: 15px;
+      color: #333;
+      font-size: 1.1em;
+  }
+  
+  .review-stars .star-filled {
+      color: #FFD700; 
+      font-size: 1.2em;
+  }
+  .review-stars .star-empty {
+      color: #ccc;
+      font-size: 1.2em;
+  }
+  
+  .review-text {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #333;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-style: italic;
+  }
+  
+  .review-date {
+      font-size: 0.85em;
+      color: #888;
+      text-align: right;
+      display: block;
+  }
+  
+  
+  @media (max-width: 768px) {
+    
+    .main-navbar {
+      padding: 15px 20px;
+    }
+    .navbar-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      text-align: left;
+      margin-top: 15px;
+    }
+    .nav-links li a {
+      padding: 5px 10px; 
+    }
+    .nav-actions {
+      margin-top: 15px;
+      width: 100%;
+      justify-content: center; 
+      gap: 10px;
+    }
+    .lang-btn, .login-btn, .register-btn {
+      flex: 1; 
+      text-align: center;
+      margin: 0 5px;
+    }
+  
+    .hero {
+      padding: 60px 15px;
+    }
+    .hero h1 {
+      font-size: 32px;
+    }
+    .hero p {
+      font-size: 16px;
+    }
+  
+
+    .section {
+      padding: 40px 15px;
+    }
+    .section h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+    .card {
+      width: 100%; 
+      max-width: 300px; 
+    }
+  
+ 
+    .cta-section {
+      padding: 40px 15px;
+    }
+  
+   
+    .about-section {
+      padding: 40px 15px;
+    }
+    .about-container {
+      flex-direction: column;
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      text-align: center;
+    }
+    .about-text p {
+      font-size: 1rem;
+      text-align: center;
+    }
+    .about-image {
+      text-align: center;
+    }
+    .about-image img {
+      width: 80%; 
+      margin-left: 0; 
+    }
+  
+ 
+    #rental-requirements {
+      padding: 40px 15px;
+    }
+    #rental-requirements h2 {
+      font-size: 2rem;
+    }
+    .requirements-container {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .requirement-box {
+      flex: 1 1 100%; 
+    }
+  
+    
+    .review-container {
+        margin: 30px auto;
+        padding: 20px;
+    }
+    .review-container h1, .review-container h2, .review-container h3 {
+        font-size: 2em;
+    }
+    .rating label {
+        font-size: 2em;
+    }
+    textarea, input[type="text"] {
+        width: calc(100% - 20px);
+    }
+    .submit-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .review-item {
+        padding: 15px;
+    }
+    .reviewer-info h4 {
+        font-size: 1em;
+    }
+    .review-stars .star-filled, .review-stars .star-empty {
+        font-size: 1em;
+    }
+    .review-text {
+        font-size: 0.9em;
+    }
+    .review-date {
+        font-size: 0.75em;
+    }
+  
+ 
+    .footer-content {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
+    .footer-content > div {
+      min-width: unset;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+ 
+    .main-navbar {
+      padding: 10px 15px;
+    }
+    .logo {
+      font-size: 24px;
+    }
+    .nav-links li a {
+      font-size: 0.9rem;
+    }
+    .lang-btn, .login-btn, .register-btn {
+      padding: 6px 10px;
+      font-size: 0.9rem;
+    }
+  
+  
+    .hero {
+      height: auto;
+      padding: 40px 10px;
+    }
+    .hero h1 {
+      font-size: 28px;
+    }
+    .hero p {
+      font-size: 14px;
+    }
+    .hero-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn.rent-btn {
+      width: 100%;
+      max-width: 250px; 
+    }
+  
+  
+    .section h2 {
+      font-size: 22px;
+    }
+  
+
+    .about-text h2 {
+      font-size: 1.8rem;
+    }
+    .about-text p {
+      font-size: 0.9rem;
+    }
+    .about-image img {
+      width: 90%;
+    }
+  
+   
+    #rental-requirements h2 {
+      font-size: 1.8rem;
+    }
+    .requirement-box h3 {
+      font-size: 1.2rem;
+    }
+    .requirement-box ul, .requirement-notes ul {
+      font-size: 0.9rem;
+    }
+  
+
+    .review-container h1 {
+        font-size: 1.8em;
+    }
+    .review-container h2, .review-container h3 {
+        font-size: 1.5em;
+    }
+    .rating label {
+        font-size: 1.8em;
+    }
+  
+
+    .footer-section {
+      padding: 30px 15px;
+    }
+    .footer-content h3 {
+      font-size: 1rem;
+    }
+    .footer-content p {
+      font-size: 0.85rem;
+    }
+    .social-icons a {
+      margin: 0 8px;
+    }
+    .social-icons img {
+      width: 18px;
+      height: 22px;
+    }
+    .footer-bottom {
+      font-size: 0.8rem;
+    }
+    .footer-links a {
+      margin: 0 5px;
+    }
+  }

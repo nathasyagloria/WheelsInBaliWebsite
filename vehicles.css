@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f7f8fc;
+    color: #333;
+    overflow-x: hidden;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+.menu-subnav {
+  width: 100%;
+  box-sizing: border-box;
+}
+  
+  .menu-subnav {
+    position: sticky;
+    top: 70px; 
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 12px 0;
+    background-color: #5f7c8a ;
+    margin: 0;
+    box-sizing: border-box;
+    border-top: 1px solid transparent; 
+    border-bottom: 1px solid #ddd; 
+  }
+  
+  .menu-subnav a {
+    color: #f5f3ef;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 0;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-subnav a:hover::after,
+  .menu-subnav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background-color: #f5f3ef;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+  
+  .menu-section h2 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+    color: #5f7c8a;
+    text-align: center;
+  }
+  
+  .vehicle-choice {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .vehicle-choice h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .vehicle-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  
+  .option-card {
+    text-decoration: none;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 220px; 
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .option-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .option-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .option-card p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5f7c8a;
+  }
+  
+
+  .vehicle-section {
+    padding: 2rem;
+    text-align: center;
+    padding-top: 150px;
+  }
+  
+  .vehicle-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .vehicle-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .vehicle-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .vehicle-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .vehicle-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .vehicle-card p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  .button-link {
+    display: inline-block;
+    background-color: #5f7c8a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-link:hover {
+    background-color: #4c6773;
+  }
+  
+  
+  
+  .footer-section {
+    background-color: #ececec;
+    color: #fff;
+    padding: 60px 30px 30px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-content > div {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #5f7c8a;
+  }
+  
+  .footer-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #5f7c8a;
+  }
+  
+  .social-icons a {
+    margin-right: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #4c6773;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #5f7c8a;
+  }
+  
+  .footer-links {
+    margin-top: 10px;
+  }
+  
+  .footer-links a {
+    color: #5f7c8a;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #5f7c8a;
+  }
+  

@@ -1,0 +1,137 @@
+body {
+    background: linear-gradient(to right, #e0f2f7, #c1e4ee); 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+#pilihan-layanan-section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.pilihan-container {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 700px; 
+    text-align: center;
+}
+
+.pilihan-container h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.pilihan-container p {
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.pilihan-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.pilihan-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #f8fcfd;
+    border: 2px solid #a7d9ed;
+    border-radius: 12px;
+    padding: 30px;
+    width: 280px; 
+    min-height: 200px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.pilihan-btn:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    border-color: #5f7c8a; 
+}
+
+.pilihan-btn i {
+    font-size: 3.5rem;
+    color: #5f7c8a;
+    margin-bottom: 15px;
+}
+
+.pilihan-btn h2 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.pilihan-btn p {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.pilihan-btn.rent-out-option i {
+    color: #e74c3c; 
+}
+
+.pilihan-btn.rent-out-option:hover {
+    border-color: #e74c3c;
+}
+
+
+@media (max-width: 768px) {
+    .pilihan-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pilihan-btn {
+        width: 90%; 
+        max-width: 350px;
+    }
+
+    .pilihan-container h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pilihan-container {
+        padding: 30px 20px;
+    }
+
+    .pilihan-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .pilihan-btn i {
+        font-size: 3rem;
+    }
+
+    .pilihan-btn h2 {
+        font-size: 1.4rem;
+    }
+}
