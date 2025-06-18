@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryYear = document.getElementById('summary-year');
     const summaryLicensePlate = document.getElementById('summary-license-plate');
     const summaryDescription = document.getElementById('summary-description');
-    const summaryDailyRate = document.getElementById('summary-daily-rate');
+    const summaryDailyRate = document.getElementById('daily-rate'); 
     const summaryAvailability = document.getElementById('summary-availability');
     const summaryPickupDelivery = document.getElementById('summary-pickup-delivery');
     const summaryPhotosContainer = document.getElementById('summary-photos');
@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const loggedInUserName = localStorage.getItem('loggedInUserName');
     const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+    const ownerPhoneInput = document.getElementById('owner-phone'); 
+
 
     function showStep(stepIndex) {
         formSteps.forEach((step, index) => {
@@ -47,17 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
     function validateStep(stepIndex) {
         let isValid = true;
         const currentFormStep = formSteps[stepIndex];
-        const inputs = currentFormStep.querySelectorAll('input[required], select[required], textarea[required]');
+        // Hanya pilih input required yang tidak disembunyikan oleh display:none dan tidak disabled
+        const inputs = currentFormStep.querySelectorAll('input[required]:not([style*="display: none"]):not([disabled]), select[required]:not([style*="display: none"]):not([disabled]), textarea[required]:not([style*="display: none"]):not([disabled])');
 
         inputs.forEach(input => {
             const errorElement = document.getElementById(`${input.id}-error`);
             input.classList.remove('invalid');
             if (errorElement) errorElement.style.display = 'none';
 
+            // Logika validasi untuk setiap input
             if (input.value.trim() === '' && input.type !== 'file') { 
                 isValid = false;
                 input.classList.add('invalid');
@@ -159,9 +162,16 @@ document.addEventListener('DOMContentLoaded', () => {
                             step3Title.textContent = 'Step 3: Review Your Listing';
                             document.getElementById('owner-name').value = loggedInUserName || '';
                             document.getElementById('owner-email').value = loggedInUserEmail || '';
+                            // Menonaktifkan input owner-phone dan mengosongkan nilainya
+                            ownerPhoneInput.setAttribute('disabled', 'true');
+                            ownerPhoneInput.removeAttribute('required'); // Tetap hapus required untuk jaga-jaga
+                            ownerPhoneInput.value = ''; 
                         } else {
                             ownerInfoSection.style.display = 'block';
                             step3Title.textContent = 'Step 3: Your Contact & Review';
+                            // Memastikan input owner-phone aktif dan required jika tidak login
+                            ownerPhoneInput.removeAttribute('disabled');
+                            ownerPhoneInput.setAttribute('required', 'true');
                         }
                     }
                 }
@@ -186,14 +196,11 @@ document.addEventListener('DOMContentLoaded', () => {
     vehiclePhotosInput.addEventListener('change', (event) => {
         const files = Array.from(event.target.files);
         
-        
         const newFilesToAdd = files.filter(file => !selectedFiles.some(existingFile => existingFile.name === file.name && existingFile.size === file.size));
-
 
         selectedFiles = [...selectedFiles, ...newFilesToAdd];
 
         renderPhotoPreviews();
-        
         
         vehiclePhotosInput.value = ''; 
     });
@@ -236,7 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
         summaryYear.textContent = document.getElementById('vehicle-year').value || '-';
         summaryLicensePlate.textContent = document.getElementById('license-plate').value || '-';
         summaryDescription.textContent = document.getElementById('vehicle-description').value || '-';
-        summaryDailyRate.textContent = new Intl.NumberFormat('id-ID').format(document.getElementById('daily-rate').value) || '0';
+        
+        const dailyRateValue = document.getElementById('daily-rate').value;
+        summaryDailyRate.textContent = dailyRateValue ? new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(dailyRateValue) : 'IDR 0';
+
 
         const startDate = document.getElementById('available-start-date').value;
         const endDate = document.getElementById('available-end-date').value;
@@ -260,13 +270,21 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             summaryPhotosContainer.textContent = 'No photos uploaded.';
         }
-
-        
     }
 
 
     rentOutForm.addEventListener('submit', (event) => {
         event.preventDefault();
+
+        // Pastikan owner-phone dinonaktifkan dan tidak dianggap required jika disembunyikan
+        if (isLoggedIn) {
+            ownerPhoneInput.setAttribute('disabled', 'true');
+            ownerPhoneInput.removeAttribute('required');
+            ownerPhoneInput.value = ''; 
+        } else {
+            ownerPhoneInput.removeAttribute('disabled');
+            ownerPhoneInput.setAttribute('required', 'true');
+        }
 
         if (!validateStep(currentStep)) {
             return;
@@ -288,47 +306,34 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('availableEndDate', document.getElementById('available-end-date').value);
             formData.append('pickupDeliveryPreference', document.getElementById('pickup-delivery-preference').value);
 
-            if (!isLoggedIn) {
+           
+            if (!isLoggedIn) { 
                 formData.append('ownerName', document.getElementById('owner-name').value);
                 formData.append('ownerEmail', document.getElementById('owner-email').value);
                 formData.append('ownerPhone', document.getElementById('owner-phone').value);
             } else {
                  formData.append('ownerName', loggedInUserName);
                  formData.append('ownerEmail', loggedInUserEmail);
-                 formData.append('ownerPhone', document.getElementById('owner-phone').value || 'N/A'); 
+                 formData.append('ownerPhone', ownerPhoneInput.value || 'N/A'); 
             }
 
             selectedFiles.forEach((file, index) => {
                 formData.append(`vehiclePhoto${index}`, file);
             });
-            for (let [key, value] of formData.entries()) {
-                if (value instanceof File) {
-                    console.log(`${key}: File - ${value.name} (${value.size} bytes)`);
-                } else {
-                    console.log(`${key}: ${value}`);
-                }
-            }
             
-            const simulationSuccess = true; 
+            
+            rentOutForm.style.display = 'none';
+            successMessage.style.display = 'block';
+            formServerError.style.display = 'none';
 
-            if (simulationSuccess) {
-                formSteps.forEach(step => step.style.display = 'none'); 
-                successMessage.style.display = 'block'; 
-                formServerError.style.display = 'none'; 
-            } else {
-                formServerError.textContent = 'Listing failed. Please try again.';
-                formServerError.style.color = '#e74c3c';
-            }
         }, 1500); 
     });
 
-    
     function isValidEmail(email) {
         const re = /^[^.\s@]+@[^.\s@]+\.[^.\s@]+$/; 
         return re.test(String(email).toLowerCase());
     }
 
-  
     function isValidPhoneNumber(phone) {
         const re = /^[0-9\s\+]{8,}$/; 
         return re.test(String(phone));
